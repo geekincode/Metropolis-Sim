@@ -1,8 +1,8 @@
 build/
 data/*
-!data/.gitkeep
+!data/
 plots/*
-!plots/.gitkeep
+!plots/
 
 .claude/
 
