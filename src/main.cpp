@@ -11,10 +11,10 @@
 int main() {
     // ========== 模拟参数 ==========
     std::vector<int> systemSizes = {100, 400, 900};  // 不同系统尺寸
-    const double J = 1.0;               // 耦合常数
-    const int nEquil = 5000;            // 平衡化扫描次数
-    const int nMeasure = 50000;         // 测量扫描次数
-    const int measureInterval = 10;     // 测量间隔
+    const double J = 5.0;               // 耦合常数
+    const int nEquil = 500000;            // 平衡化扫描次数
+    const int nMeasure = 1000000;         // 测量扫描次数
+    const int measureInterval = 2;     // 测量间隔
 
     // 温度范围
     const double T_min = 0.1;
@@ -24,10 +24,10 @@ int main() {
     // 随机数种子
     unsigned int seed = std::chrono::system_clock::now().time_since_epoch().count();
 
-    std::cout << "========================================\n";
-    std::cout << "  一维 Ising 模型 Metropolis MC 模拟\n";
-    std::cout << "  多系统尺寸对比研究\n";
-    std::cout << "========================================\n";
+    std::cout << "========================================\n"
+              << "  一维 Ising 模型 Metropolis MC 模拟\n"
+              << "  多系统尺寸对比研究\n"
+              << "========================================\n";
     std::cout << "系统尺寸: N = ";
     for (size_t i = 0; i < systemSizes.size(); ++i) {
         std::cout << systemSizes[i];

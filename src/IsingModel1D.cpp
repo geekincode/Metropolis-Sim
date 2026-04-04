@@ -32,7 +32,8 @@ double IsingModel1D::calculateEnergyChange(int site) const {
     int right = (site + 1) % N;      // 右邻居（周期性边界）
     int neighborSum = spins[left] + spins[right];
 
-    // ΔE = E_new - E_old = -2 * J * σ_i * (σ_{i-1} + σ_{i+1})
+    // ΔE = E_new - E_old = 2 * J * σ_i * (σ_{i-1} + σ_{i+1})
+    // （因为哈密顿量定义为 H = -J * sum(σ_i * σ_{i+1})）
     return 2.0 * J * spins[site] * neighborSum;
 }
 
