@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 编译选项（优化和警告）
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra")
 
+# 查找MPI包
+find_package(MPI REQUIRED)
+
 # 源文件
 set(SOURCES
     src/IsingModel1D.cpp
@@ -17,6 +20,8 @@ set(SOURCES
 
 # 可执行文件
 add_executable(ising1d ${SOURCES})
+
+target_link_libraries(ising1d MPI::MPI_CXX)
 
 # 创建输出目录
 file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/data)
